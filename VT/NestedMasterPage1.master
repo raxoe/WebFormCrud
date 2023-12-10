@@ -1,0 +1,5 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="NestedMasterPage1.master.cs" Inherits="VT.NestedMasterPage1" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+    <h2>Nested Master Page</h2>
+    <asp:ContentPlaceHolder ID="ctNst" runat="server" ></asp:ContentPlaceHolder>
+</asp:Content>
