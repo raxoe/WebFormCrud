@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BusinessLogic;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Configuration.Provider;
@@ -14,31 +15,48 @@ namespace VT.Ado
 {
     public partial class List : System.Web.UI.Page
     {
+        
         protected void Page_Load(object sender, EventArgs e)
         {
+            string foo = Session["TestSessionStart"].ToString();
             if (!IsPostBack)    //only first time
             {
+                if (Session["UserName"] != null)
+                {
+                    lblMessage.Text = Session["UserName"].ToString();
+                }
+                if (Session["TestSessionStart"] != null)
+                {
+                    lblMessage.Text += " " + Session["TestSessionStart"].ToString();
+                }
+                if (Application["AppLevelMessage"] != null)
+                {
+                    lblMessage.Text += " "+ Application["AppLevelMessage"].ToString();
+                }
                 BindGrid();
             }
         }
         protected void BindGrid()
         {
-            string constr = ConfigurationManager.ConnectionStrings["DbTestCon"].ConnectionString;            
-            string query = "SELECT * FROM TblDemo";
+            //string constr = ConfigurationManager.ConnectionStrings["DbTestCon"].ConnectionString;            
+            //string query = "SELECT * FROM TblDemo";
 
-            using (SqlConnection con = new SqlConnection(constr))
-            {
-                using (SqlDataAdapter sda = new SqlDataAdapter(query, con))
-                {
-                    using (DataTable dt = new DataTable())
-                    {
-                        sda.Fill(dt);
-                        gvList.DataSource = dt;
-                        gvList.DataBind();
-                    }
-                }
-            }
+            //using (SqlConnection con = new SqlConnection(constr))
+            //{
+            //    using (SqlDataAdapter sda = new SqlDataAdapter(query, con))
+            //    {
+            //        using (DataTable dt = new DataTable())
+            //        {
+            //            sda.Fill(dt);
+            //            gvList.DataSource = dt;
+            //            gvList.DataBind();
+            //        }
+            //    }
+            //}
+            DemoBL demoBL = new DemoBL();
 
+            gvList.DataSource = demoBL.GetDemo();
+            gvList.DataBind();
 
         }
 
@@ -67,6 +85,11 @@ namespace VT.Ado
 
                 BindGrid();
             }
+        }
+
+        protected void tm_tick(object sender,EventArgs e)
+        {
+            lblMessage.Text += "Foo";
         }
     }
 }

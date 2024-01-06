@@ -15,7 +15,7 @@ namespace VT.Ado
     public partial class Edit : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
-        {
+        {            
             if (Request.QueryString["id"] == null)
             {
                 Response.Redirect("List.aspx");
