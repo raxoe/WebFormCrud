@@ -15,7 +15,7 @@ namespace VT.Ado
     public partial class Edit : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
-        {            
+        {
             if (Request.QueryString["id"] == null)
             {
                 Response.Redirect("List.aspx");
@@ -70,7 +70,7 @@ namespace VT.Ado
                 string id = hdnId.Value.ToString();
                 //log.Trace("tblDemo querystring ID : " + id);
                 string constr = ConfigurationManager.ConnectionStrings["DbTestCon"].ConnectionString;
-                constr = "foo";
+                //constr = "foo";
                 string query = "UPDATE TblDemo SET Name=@Name,Category=@Category,Description=@Description where Id=@Id";
                 using (SqlConnection con = new SqlConnection(constr))
                 {
@@ -90,12 +90,13 @@ namespace VT.Ado
                 //log.Info("Updated successfully for "+id);
                 Response.Redirect("List.aspx");
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 //log.Error(ex.message.tostring());
             }
-            finally{
-                
+            finally
+            {
+
                 lblInfo.Text = "Something got wrong, please contact to administrator";
             }
         }
