@@ -361,3 +361,8 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+/VT/VT.csproj
+/VT/Web.config
+/.gitignore
+/VT/VT.csproj
+/VT/Web.config

@@ -7,30 +7,39 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace VT.Ado
+namespace VT.StateManagement
 {
 
 
-    public partial class List
+    public partial class StateManagement
     {
 
         /// <summary>
-        /// lnkCreate control.
+        /// txtName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lnkCreate;
+        protected global::System.Web.UI.WebControls.TextBox txtName;
 
         /// <summary>
-        /// upl control.
+        /// btnSetSession control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.UpdatePanel upl;
+        protected global::System.Web.UI.WebControls.Button btnSetSession;
+
+        /// <summary>
+        /// btnRetriveSession control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnRetriveSession;
 
         /// <summary>
         /// lblMessage control.
@@ -40,23 +49,5 @@ namespace VT.Ado
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblMessage;
-
-        /// <summary>
-        /// gvList control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gvList;
-
-        /// <summary>
-        /// tm control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.Timer tm;
     }
 }
