@@ -53,6 +53,10 @@
       <Project>{14C03C32-55E6-4644-8FBE-E84DE34E906A}</Project>
       <Name>DataAccess</Name>
     </ProjectReference>
+    <ProjectReference Include="..\VT.EntityFramework\VT.EntityFramework.csproj">
+      <Project>{a31be6eb-2f9c-4c81-bbb8-2d22ac161a05}</Project>
+      <Name>VT.EntityFramework</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
